@@ -1,0 +1,26 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  telegramId    Int      @unique
+  username      String?
+  firstName     String?
+  lastName      String?
+  points        Int      @default(0)
+  completedTasks String[] @default([])
+  upiIds    String[]  @default([])
+  requests  String[]  @default([])
+  invitedUsers  String[] @default([])
+  invitedBy     String?  @default("")
+  currentTime   DateTime? @updatedAt
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+

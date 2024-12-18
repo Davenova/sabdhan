@@ -272,20 +272,24 @@
   color: var(--text-dark);
 }
 
+/* Notification */
 .notification {
   position: fixed;
-  bottom: 70px;
-  left: 50%;
+  bottom: 80px;
+ left: 50%;
   transform: translateX(-50%);
   z-index: 30;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  background: rgba(139, 92, 246, 0.9);
   color: white;
-  border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(100% - 2rem);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  backdrop-filter: blur(10px);
+  width: calc(100% - 3rem);
   max-width: 400px;
   text-align: center;
+  animation: notificationSlide 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode .notification {
